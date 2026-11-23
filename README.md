@@ -14,53 +14,37 @@ An asynchronous, policy-grounded Trust \& Safety triage service built with \*\*F
 
 
 
-```text
+```mermaid
 
-POST /api/v1/triage (ProfileInput)
+flowchart LR
 
-&#x20;       │
+&#x20;   A\["POST /api/v1/triage<br/>(ProfileInput)"] --> B{"Node 1: Fast Triage<br/>\& Domain Router"}
 
-&#x20;       ▼
+&#x20;   B -- "Verified domain / benign" --> C\["Early Exit (LOW)"]
 
-┌───────────────────┐   Verified domain / benign   ┌──────────────────┐
+&#x20;   B -- "Suspicious mention" --> D\["Node 2: Policy RAG<br/>Assessment"]
 
-│  Node 1: Triage   │ ───────────────────────────► │ Early Exit (LOW) │
+&#x20;   D <--> E\[("PostgreSQL + pgvector<br/>(HNSW Brand Filter)")]
 
-│  \& Fast Router    │                              └──────────────────┘
+&#x20;   C --> F\["Structured JSON Verdict<br/>+ Human Review Flag"]
 
-└───────────────────┘
-
-&#x20;       │ Suspicious brand mention
-
-&#x20;       ▼
-
-┌───────────────────┐   HNSW Cosine Similarity     ┌──────────────────┐
-
-│  Node 2: Policy   │ ◄──────────────────────────► │   PostgreSQL +   │
-
-│  RAG Assessment   │   (Filtered by Brand ID)     │     pgvector     │
-
-└───────────────────┘                              └──────────────────┘
-
-&#x20;       │
-
-&#x20;       ▼
-
-Structured JSON Verdict (Pydantic) + Human-in-the-Loop Escalation Flag
+&#x20;   D --> F
 
 ```
 
 
 
-\### Key Engineering Decisions
+\## Key Engineering Decisions
 
-\- \*\*Conditional Graph Routing (`LangGraph`):\*\* Short-circuits verified official domains and non-impersonating mentions before invoking vector search or LLM generation, reducing token cost and tail latency.
 
-\- \*\*Multi-Tenant Policy Isolation (`pgvector`):\*\* Uses an HNSW index with brand-level SQL filtering (`WHERE LOWER(brand) = LOWER($2)`) so client policies never bleed across tenants.
 
-\- \*\*Strict I/O Contracts (`Pydantic`):\*\* Enforces schema validation on incoming profile payloads and constrains LLM outputs to deterministic risk tiers (`LOW`, `MEDIUM`, `HIGH`), confidence scores, and cited policy IDs.
+\* \*\*Conditional Graph Routing (`LangGraph`):\*\* Short-circuits verified official domains and non-impersonating mentions before invoking vector search or LLM generation, reducing token cost and tail latency.
 
-\- \*\*Data Privacy:\*\* Uses simulated FinTech (`ApexBank`) and E-Commerce (`SwiftMart`) policy rules for safe public benchmarking.
+\* \*\*Multi-Tenant Policy Isolation (`pgvector`):\*\* Uses an HNSW index with brand-level SQL filtering (`WHERE LOWER(brand) = LOWER($2)`) so client policies never bleed across tenants.
+
+\* \*\*Strict I/O Contracts (`Pydantic`):\*\* Enforces schema validation on incoming profile payloads and constrains LLM outputs to deterministic risk tiers (`LOW`, `MEDIUM`, `HIGH`), confidence scores, and cited policy IDs.
+
+\* \*\*Data Privacy:\*\* Uses simulated FinTech (`ApexBank`) and E-Commerce (`SwiftMart`) policy rules for safe public benchmarking.
 
 
 
