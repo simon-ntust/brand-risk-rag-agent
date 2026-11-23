@@ -1,3 +1,12 @@
+---
+title: Brand-Risk RAG Triage Agent
+emoji: 🛡️
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+---
+
 # Brand-Risk Intelligence & RAG Agent
 
 ![CI](https://github.com/simon-ntust/brand-risk-rag-agent/actions/workflows/ci.yml/badge.svg)

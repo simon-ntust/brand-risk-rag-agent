@@ -4,6 +4,8 @@ from fastapi import FastAPI
 from app.db import close_db, init_db
 from app.graph import triage_graph
 from app.schemas import ProfileInput, TriageVerdict
+from fastapi.responses import FileResponse
+
 
 
 @asynccontextmanager
@@ -23,6 +25,10 @@ app = FastAPI(
 @app.get("/health")
 async def health_check():
     return {"status": "ok"}
+
+@app.get("/", include_in_schema=False)
+async def serve_demo():
+    return FileResponse("static/index.html")
 
 
 @app.post("/api/v1/triage", response_model=TriageVerdict)
