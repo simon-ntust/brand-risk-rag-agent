@@ -1,0 +1,112 @@
+[
+  {
+    "expected_risk": "HIGH",
+    "profile": {
+      "brand": "ApexBank",
+      "handle": "@apexbank_vip_trades",
+      "display_name": "ApexBank Stock Signals",
+      "bio": "Join our Telegram VIP group for guaranteed 250% monthly returns!",
+      "external_url": "https://t.me/apexbank_vip",
+      "recent_posts": ["DM 'PROFIT' to join ApexBank private trading desk."]
+    }
+  },
+  {
+    "expected_risk": "HIGH",
+    "profile": {
+      "brand": "ApexBank",
+      "handle": "@apexbank_helpdesk_tw",
+      "display_name": "ApexBank Support Team",
+      "bio": "Account locked? Message us your SMS OTP code for instant verification.",
+      "external_url": "https://apexbank-verify-login.example.com",
+      "recent_posts": ["Urgent security alert for all ApexBank cardholders."]
+    }
+  },
+  {
+    "expected_risk": "LOW",
+    "profile": {
+      "brand": "ApexBank",
+      "handle": "@apexbank_official",
+      "display_name": "ApexBank",
+      "bio": "Official page of ApexBank. Banking made simple.",
+      "external_url": "https://apexbank.com",
+      "recent_posts": ["Check out our Q4 sustainability report."]
+    }
+  },
+  {
+    "expected_risk": "LOW",
+    "profile": {
+      "brand": "ApexBank",
+      "handle": "@taipei_coffee_lover",
+      "display_name": "Kevin Chen",
+      "bio": "Software engineer & weekend runner in Taipei.",
+      "external_url": null,
+      "recent_posts": ["Great iced latte near Da'an park today."]
+    }
+  },
+  {
+    "expected_risk": "LOW",
+    "profile": {
+      "brand": "ApexBank",
+      "handle": "@fintech_news_daily",
+      "display_name": "Asia FinTech Watch",
+      "bio": "Covering digital banking news. Mentioned ApexBank Q3 earnings in our latest thread.",
+      "external_url": "https://fintechwatch.example.com",
+      "recent_posts": ["ApexBank announced new mobile transfer features today."]
+    }
+  },
+  {
+    "expected_risk": "HIGH",
+    "profile": {
+      "brand": "SwiftMart",
+      "handle": "@swiftmart_parttime_jobs",
+      "display_name": "SwiftMart Merchant Recruitment",
+      "bio": "Earn NT$3,000/day completing simple product orders from home!",
+      "external_url": "https://wa.me/886900000000",
+      "recent_posts": ["Hiring 50 remote order agents for SwiftMart."]
+    }
+  },
+  {
+    "expected_risk": "HIGH",
+    "profile": {
+      "brand": "SwiftMart",
+      "handle": "@swiftmart_free_voucher",
+      "display_name": "SwiftMart Anniversary Giveaway",
+      "bio": "Claim your free NT$5,000 SwiftMart gift card! Enter your credit card to pay shipping.",
+      "external_url": "https://swiftmart-free-gift.example.com",
+      "recent_posts": ["Only 10 vouchers left! Click link in bio."]
+    }
+  },
+  {
+    "expected_risk": "LOW",
+    "profile": {
+      "brand": "SwiftMart",
+      "handle": "@bella_handmade_soap",
+      "display_name": "Bella Natural Soap Studio",
+      "bio": "Handmade organic soaps. Shop our official SwiftMart storefront below!",
+      "external_url": "https://swiftmart.com/shop/bella-soap",
+      "recent_posts": ["New lavender batch restocked on SwiftMart!"]
+    }
+  },
+  {
+    "expected_risk": "LOW",
+    "profile": {
+      "brand": "SwiftMart",
+      "handle": "@swiftmart_official",
+      "display_name": "SwiftMart Official",
+      "bio": "Your everyday online marketplace.",
+      "external_url": "https://swiftmart.com",
+      "recent_posts": ["Weekend flash deals start tonight at 8 PM."]
+    }
+  },
+  {
+    "expected_risk": "LOW",
+    "profile": {
+      "brand": "SwiftMart",
+      "handle": "@gadget_reviewer_tw",
+      "display_name": "Jason Tech Reviews",
+      "bio": "Unboxing phones and laptops. Bought my new mic on SwiftMart last week.",
+      "external_url": null,
+      "recent_posts": ["Fast delivery from SwiftMart as usual."]
+    }
+  }
+]
